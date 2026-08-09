@@ -1,5 +1,5 @@
 import { Link } from '@inertiajs/react';
-import { BookOpen, FolderGit2, LayoutGrid } from 'lucide-react';
+import { LibraryBig, Book, BookUser, BookOpen, FolderGit2, LayoutGrid, Search, School } from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
@@ -23,17 +23,32 @@ const mainNavItems: NavItem[] = [
         icon: LayoutGrid,
     },
     {
-        title: 'Products',
-        href: "#",
-        icon: LayoutGrid,
+        title: 'Search',
+        href: '#',
+        icon: Search,
+    },
+    {
+        title: 'Attendance',
+        href: '#',
+        icon: BookUser,
+    },
+    {
+        title: 'Material',
+        href: '#',
+        icon: LibraryBig,
+    },
+    {
+        title: 'Course Material',
+        href: '#',
+        icon: Book,
     },
 ];
 
 const footerNavItems: NavItem[] = [
     {
-        title: 'Repository',
-        href: 'https://github.com/laravel/react-starter-kit',
-        icon: FolderGit2,
+        title: 'Mary Our Help',
+        href: 'https://maryourhelp-cebu.edu.ph/',
+        icon: School,
     },
     {
         title: 'Documentation',

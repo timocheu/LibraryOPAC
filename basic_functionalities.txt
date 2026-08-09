@@ -1,0 +1,78 @@
+DD = Drop Down
+CB = Check Box
+
+Admin Dashboard
+{
+Tabs:
+    - Home
+        1. Guide
+        2. Penalty History
+        3. Transaction History
+        4. Reservation History
+    - Attendance
+    - Search
+    - Transaction
+    - Reservation
+    - Material
+    - Course Material
+    - Profile
+    - Library Usage Monitoring (Data Analytics)
+}
+
+Add New Material
+{
+    Material Type
+    - Material Type - DD
+    - Category (Optional) - DD
+        - List (College, ...)
+
+    Material Details
+    - Title
+    - Description
+    - Author Type - DD
+    - Editor
+    - Edition
+    - Year Published
+    - Publication
+    - Year Published - Doubled???
+    - Series
+    - Notes
+    - Summary
+    - Subject
+    - ISBN
+    - Program - DD
+    - College - DD
+    - Page Number
+    - Issue Number
+    - Volume Number
+    - Page Number - Doubled???
+    - Source Title
+    - ISSN
+    - Tag
+    - File (Choose File)
+
+    Material Status (Optional) - But there is required? Crazy
+    - Accession No
+    - Call No
+    - Location (Required) - DD
+    - Shelf No
+    - Status (Requried) - DD
+    - Is Borrowable - CB
+}
+
+Library Attendance
+{
+    - Real-Time Date
+    - Attendance Section
+        - Identification
+            1. ID No. (Auto Search)
+        - Attendance Information
+            1. Last Name
+            2. First Name
+            3. Middle Name
+        Purpose of Visit
+            1. Internet Resource
+            2. Research
+            3. Periodicals (Newspaper, Journal, Magazines)
+            4. Study
+}

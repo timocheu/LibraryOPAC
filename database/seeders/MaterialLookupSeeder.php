@@ -18,9 +18,12 @@ class MaterialLookupSeeder extends Seeder
         $this->seedLookup('material_types', [
             'Book',
             'Course Material',
+            'Audio Visual Collection',
             'Journal',
+            'E-Journal',
+            'E-Resource',
             'Thesis',
-            'Reference',
+            'Periodicals',
         ]);
 
         $this->seedLookup('material_categories', [
@@ -48,9 +51,9 @@ class MaterialLookupSeeder extends Seeder
 
         $this->seedLookup('colleges', [
             'College of Arts and Sciences',
+            'College of Nursing',
             'College of Engineering',
-            'College of Business',
-            'College of Education',
+            'College of Computer Studies',
         ]);
 
         $this->seedLookup('locations', [

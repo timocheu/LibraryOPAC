@@ -1,5 +1,5 @@
 import { Link } from '@inertiajs/react';
-import { LibraryBig, Book, BookUser, BookOpen, FolderGit2, LayoutGrid, Search, School } from 'lucide-react';
+import { LibraryBig, Book, BookUser, BookOpen, LayoutGrid, Search, School } from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';

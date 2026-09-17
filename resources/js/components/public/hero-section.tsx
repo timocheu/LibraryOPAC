@@ -14,7 +14,7 @@ export function HeroSection() {
             />
 
             {/* Blue Transparent Overlay */}
-            <div className="absolute inset-0 bg-[#0b2038]/90" />
+            <div className="absolute inset-0 bg-[#0b2038]/75" />
 
             {/* Hero Content Overlay */}
             <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-8">

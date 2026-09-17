@@ -106,7 +106,7 @@ export function OffersSection() {
                                 <div>
                                     <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-[#fff8e7]">
                                         {/* Render the Lucide Icon directly */}
-                                        <Icon className="h-5 w-5 text-[#d97706]" strokeWidth={2} />
+                                        <Icon className="h-5 w-5 text-[#09254B]" strokeWidth={2} />
                                     </div>
                                     <h3 className="mb-2 text-lg font-bold text-[#0b2038]">
                                         {card.title}

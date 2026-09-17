@@ -1,6 +1,8 @@
+import AboutImage from '@/public/images/maryourhelpherosection2.png';
+
 export function AboutSection() {
     return (
-        <section className="bg-[#f8f9fa] px-6 py-20 lg:px-8">
+        <section className="bg-[#f8f9fa] px-6 py-20 lg:px-8 mb-10">
             <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
                 <div className="max-w-xl">
                     <h4 className="mb-2 text-xl font-bold tracking-wider text-[#FFAB20] uppercase">
@@ -50,19 +52,17 @@ export function AboutSection() {
                     </button>
                 </div>
 
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-gray-200 shadow-xl">
+                <div className="relative aspect-[4/3] overflow-hidden bg-gray-200 shadow-xl">
                     {/* Library Interior Image Placeholder */}
                     <img
-                        src="/path-to-library-interior.jpg"
+                        src="images/maryourhelpherosection2.png"
                         alt="Inside the library"
                         className="h-full w-full object-cover"
                         onError={(e) => {
                             e.currentTarget.style.display = 'none';
                         }}
                     />
-                    <div className="absolute inset-0 flex items-center justify-center bg-slate-200 font-medium text-gray-400">
-                        Image Placeholder (Library Interior)
-                    </div>
+            
                 </div>
             </div>
         </section>

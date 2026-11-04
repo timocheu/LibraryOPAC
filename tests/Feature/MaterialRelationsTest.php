@@ -5,6 +5,7 @@ use App\Models\AuthorType;
 use App\Models\EducationalLevel;
 use App\Models\Location;
 use App\Models\Material;
+use App\Models\MaterialCategory;
 use App\Models\MaterialCopy;
 use App\Models\MaterialStatus;
 use App\Models\MaterialType;
@@ -12,10 +13,14 @@ use App\Models\Tag;
 
 test('a material belongs to its catalog lookups', function () {
     $type = MaterialType::create(['name' => 'Book']);
-    $material = Material::factory()->create(['material_type_id' => $type->id, 'category_id' => null]);
+    $category = MaterialCategory::create(['name' => 'Fiction']);
+    $material = Material::factory()->create([
+        'material_type_id' => $type->id,
+        'category_id' => $category->id,
+    ]);
 
     expect($material->materialType->is($type))->toBeTrue();
-    expect($material->category)->toBeNull();
+    expect($material->category->is($category))->toBeTrue();
 });
 
 test('a material links authors with their author types through the pivot', function () {

@@ -15,14 +15,13 @@ use Illuminate\Support\Carbon;
 /**
  * @property int $id
  * @property int $material_type_id
- * @property int|null $category_id
- * @property int|null $program_id
- * @property int|null $college_id
+ * @property int $category_id
  * @property string $title
  * @property string|null $description
  * @property string|null $edition
  * @property int|null $year_published
- * @property string|null $publication
+ * @property string|null $publishing_company
+ * @property string|null $place_of_publication
  * @property string|null $series
  * @property string|null $notes
  * @property string|null $summary
@@ -37,7 +36,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-#[Fillable(['material_type_id', 'category_id', 'program_id', 'college_id', 'title', 'description', 'edition', 'year_published', 'publication', 'series', 'notes', 'summary', 'subject', 'isbn', 'page_count', 'issue_number', 'volume_number', 'source_title', 'issn', 'file_path'])]
+#[Fillable(['material_type_id', 'category_id', 'title', 'description', 'edition', 'year_published', 'publishing_company', 'place_of_publication', 'series', 'isbn', 'issn', 'page_count', 'issue_number', 'volume_number', 'source_title', 'subject', 'notes', 'summary', 'file_path'])]
 #[Hidden(['file_path'])]
 class Material extends Model
 {
@@ -52,16 +51,6 @@ class Material extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(MaterialCategory::class);
-    }
-
-    public function program(): BelongsTo
-    {
-        return $this->belongsTo(Program::class);
-    }
-
-    public function college(): BelongsTo
-    {
-        return $this->belongsTo(College::class);
     }
 
     public function copies(): HasMany

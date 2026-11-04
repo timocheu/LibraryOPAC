@@ -49,13 +49,6 @@ class MaterialLookupSeeder extends Seeder
             'Post-Graduate',
         ]);
 
-        $this->seedLookup('colleges', [
-            'College of Arts and Sciences',
-            'College of Nursing',
-            'College of Engineering',
-            'College of Computer Studies',
-        ]);
-
         $this->seedLookup('locations', [
             'Main Library',
             'Reserve Section',

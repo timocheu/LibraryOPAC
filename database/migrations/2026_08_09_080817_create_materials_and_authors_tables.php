@@ -14,31 +14,32 @@ return new class extends Migration
         Schema::create('materials', function (Blueprint $table) {
             $table->id();
             $table->foreignId('material_type_id')->constrained('material_types')->cascadeOnDelete();
-            $table->foreignId('category_id')->nullable()->constrained('material_categories')->nullOnDelete();
-            $table->foreignId('program_id')->nullable()->constrained('programs')->nullOnDelete();
-            $table->foreignId('college_id')->nullable()->constrained('colleges')->nullOnDelete();
-            $table->string('title');
+            $table->foreignId('category_id')->constrained('material_categories')->cascadeOnDelete();
+            $table->string('title')->index();
             $table->text('description')->nullable();
             $table->string('edition')->nullable();
-            $table->unsignedSmallInteger('year_published')->nullable();
-            $table->string('publication')->nullable();
+            $table->smallInteger('year_published')->nullable()->index();
+            $table->string('publishing_company')->nullable();
+            $table->string('place_of_publication')->nullable();
             $table->string('series')->nullable();
-            $table->text('notes')->nullable();
-            $table->text('summary')->nullable();
-            $table->string('subject')->nullable();
-            $table->string('isbn')->nullable()->unique();
+            $table->string('isbn')->nullable()->index();
+            $table->string('issn')->nullable()->index();
             $table->unsignedInteger('page_count')->nullable();
             $table->string('issue_number')->nullable();
             $table->string('volume_number')->nullable();
             $table->string('source_title')->nullable();
-            $table->string('issn')->nullable();
+            $table->string('subject')->nullable();
+            $table->text('notes')->nullable();
+            $table->text('summary')->nullable();
             $table->string('file_path')->nullable();
             $table->timestamps();
+            $table->index('material_type_id');
+            $table->index('category_id');
         });
 
         Schema::create('authors', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->index();
             $table->timestamps();
         });
     }

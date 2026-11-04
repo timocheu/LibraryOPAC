@@ -35,19 +35,6 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('colleges', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->unique();
-            $table->timestamps();
-        });
-
-        Schema::create('programs', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('college_id')->nullable()->constrained('colleges')->nullOnDelete()->index();
-            $table->string('name');
-            $table->timestamps();
-        });
-
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
@@ -75,8 +62,6 @@ return new class extends Migration
         Schema::dropIfExists('tags');
         Schema::dropIfExists('material_statuses');
         Schema::dropIfExists('locations');
-        Schema::dropIfExists('programs');
-        Schema::dropIfExists('colleges');
         Schema::dropIfExists('educational_levels');
         Schema::dropIfExists('author_types');
         Schema::dropIfExists('material_categories');

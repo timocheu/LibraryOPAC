@@ -17,6 +17,9 @@ return new class extends Migration
             $table->foreignId('author_type_id')->constrained('author_types')->cascadeOnDelete();
 
             $table->primary(['author_id', 'material_id', 'author_type_id']);
+            $table->index('material_id');
+            $table->index('author_id');
+            $table->index('author_type_id');
         });
 
         Schema::create('educational_level_material', function (Blueprint $table) {
@@ -24,6 +27,8 @@ return new class extends Migration
             $table->foreignId('material_id')->constrained('materials')->cascadeOnDelete();
 
             $table->primary(['educational_level_id', 'material_id']);
+            $table->index('material_id');
+            $table->index('educational_level_id');
         });
 
         Schema::create('material_tag', function (Blueprint $table) {
@@ -31,18 +36,23 @@ return new class extends Migration
             $table->foreignId('tag_id')->constrained('tags')->cascadeOnDelete();
 
             $table->primary(['material_id', 'tag_id']);
+            $table->index('material_id');
+            $table->index('tag_id');
         });
 
         Schema::create('material_copies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('material_id')->constrained('materials')->cascadeOnDelete();
-            $table->string('accession_no')->nullable()->unique();
-            $table->string('call_no')->nullable();
+            $table->string('accession_no')->unique();
+            $table->string('call_no')->index();
             $table->foreignId('location_id')->constrained('locations')->cascadeOnDelete();
             $table->string('shelf_no')->nullable();
             $table->foreignId('status_id')->constrained('material_statuses')->cascadeOnDelete();
-            $table->boolean('is_borrowable')->default(false);
+            $table->boolean('is_borrowable')->default(true);
             $table->timestamps();
+            $table->index('material_id');
+            $table->index('location_id');
+            $table->index('status_id');
         });
     }
 
